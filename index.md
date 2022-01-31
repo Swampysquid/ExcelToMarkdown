@@ -4,7 +4,7 @@
 **By: Eythan Jenkins**
 ## <u>Summary</u>
 
-This Macro will take in a cell selection made by the user in Excel, and convert it into a .txt file for the user to then copy into a Markdown-formatted webpage to generate a Markdown table. The .txt file will be titled 'copyFile', and will be written on the user's computer. The user will also have three auxilliary options when it comes to generating the .txt file. Any Excel cells marked with an '!' will be blanked out in the .txt file. Any Excel cells marked with an '!!' will be blanked out in the .txt file, in addition to any cells in the same column which follow that cell. Finally, any Excel cells marked with '!!!' will have their hyperlink disabled, so that only text is converted from the Excel cell into the Markdown table. A sample Excel Sheet to Markdown Table is below, and will be referred to later on to help convey the ideas of this VBA program.  
+This Macro will take in a cell selection made by the user in Excel, and convert it into a .txt file for the user to then copy into a Markdown-formatted webpage to generate a Markdown table. The .txt file will be titled 'copyFile', and will be written on the user's computer. The user will also have three auxiliary options when it comes to generating the .txt file. Any Excel cells marked with an '!' will be blanked out in the .txt file. Any Excel cells marked with an '!!' will be blanked out in the .txt file, in addition to any cells in the same column which follow that cell. Finally, any Excel cells marked with '!!!' will have their hyperlink disabled, so that only text is converted from the Excel cell into the Markdown table. A sample Excel Sheet to Markdown Table is below, and will be referred to later on to help convey the ideas of this VBA program.  
 
 ## <u>Excel Sheet</u>
 
@@ -43,19 +43,19 @@ The initial selection dictates the range that this Macro has. By selecting a box
 
 ### <u>Single Cell Blanking</u>
 
-The first auxilliary user option is to place an '!' in front of a cell. This will omit that cell's text from entering the .txt file, therefore preventing that cell from appearing on the Markdown Table. This is demonstrated in cells A10 and C12. Both of these cells do not appear on the resulting Markdown Table.
+The first auxiliary user option is to place an '!' in front of a cell. This will omit that cell's text from entering the .txt file, therefore preventing that cell from appearing on the Markdown Table. This is demonstrated in cells A10 and C12. Both of these cells do not appear on the resulting Markdown Table.
 
 ### <u>Column Blanking</u>
 
-The second auxilliary option is to place an '!!' in front of a cell. Placing '!!' will not only perform the same function as '!', but will also perform the '!' function to all cells in the same column which come after the '!!' cell. This is demonstrated in cells B12 and D12. Both of these cells, as well as the future cells in columns B and D, do not appear on the Markdown Table due to the '!!' option.
+The second auxiliary option is to place an '!!' in front of a cell. Placing '!!' will not only perform the same function as '!', but will also perform the '!' function to all cells in the same column which come after the '!!' cell. This is demonstrated in cells B12 and D12. Both of these cells, as well as the future cells in columns B and D, do not appear on the Markdown Table due to the '!!' option.
 
 ### <u>Disable Hyperlinks</u>
 
-The final auxilliary option is to place '!!!' in front of a cell. This option will disable the hyperlink associated with that cell, making only the text in that cell convert to the Markdown Table. This is demonstrated in cell D6. D6 has an active hyperlink in the Excel sheet, but in the Markdown Table, the hyperlink has been disabled and only the text appears. 
+The final auxiliary option is to place '!!!' in front of a cell. This option will disable the hyperlink associated with that cell, making only the text in that cell convert to the Markdown Table. This is demonstrated in cell D6. D6 has an active hyperlink in the Excel sheet, but in the Markdown Table, the hyperlink has been disabled and only the text appears. 
 
 ## <u>How the Code Works</u>
 
-The first bit of code establishes a text file which will be written into by the Macro. Additionally, it declares range as the selection the user has made in the Excel sheet. It uses this selection to create two dimensions: tableHeight and tableLength. FInally, a dynamically sized array is established, which will hold the number of a column which is 'blacklisted,' indicated by '!!' in the excel cells. \[Reference 1]
+The first bit of code establishes a text file which will be written into by the Macro. Additionally, it declares range as the selection the user has made in the Excel sheet. It uses this selection to create two dimensions: tableHeight and tableLength. Finally, a dynamically sized array is established, which will hold the number of a column which is 'blacklisted,' indicated by '!!' in the excel cells. \[Reference 1]
 
 ![Code1](Code1.JPG)
 
@@ -63,7 +63,7 @@ __________________________________
 
 The second piece of my code begins the reading operation: it will go row-by-row, then column-by-column to read the information of the Excel cells. The .txt file will be written into row-by-row by using a String named rowString. This will contain the contents each row of the Markdown Table will consist of. An additional part of this code is an If statement which flags when Row = 2. When Row = 2, I must add syntax for the .txt file to be Markdown congruent. 
 
-This code will then enter a nested loop, where I enter the column-by-column counter. FOr each column, I look through my dynamic array to make sure that the column doesn't match a blacklisted one. If it matches a blacklisted column, the cellValue variable will = '!'. If the column is a good column, I will save the data in the corresponding Excel cell into the cellValue variable. \[Reference 2]
+This code will then enter a nested loop, where I enter the column-by-column counter. For each column, I look through my dynamic array to make sure that the column doesn't match a blacklisted one. If it matches a blacklisted column, the cellValue variable will = '!'. If the column is a good column, I will save the data in the corresponding Excel cell into the cellValue variable. \[Reference 2]
 
 ![Code2](Code2.JPG)
 
@@ -75,17 +75,19 @@ The next segment looks closer at the data within a selected cell. It generates b
 
 __________________________________
 
-
+This segment of the code is in control of the auxiliary options. It uses a decision structure to see how many '!' exist behind a cell, if any. At the innermost is the decision if there is '!!!', in which case a loop is entered which looks for the hyperlink in that specific cell. It will check if the hyperlink is equal to the text (i.e. https://...). If equal, then the hyperlink will be disabled. Else, the text is already different than the hyperlink, so separating the two values from each other will be sufficient. This section also adds any bold, italicized, or underline notation as needed to variable cellValue, and finally adds the produced cellValue to rowString with a '|' for syntax. \[Reference 2]
 
 ![Code4](Code4.JPG)
 
 __________________________________
 
+This segment of code corresponds to the '!!' and '!' functions. '!!' will blacklist column values by redimensioning an array to hold a new value. The array preserves any old blacklisted values, so that it can contain more than one blacklisted column at a time. '!' simply blanks out the cell. \[Reference 1]
 
 ![Code5](Code5.JPG)
 
 __________________________________
 
+This segment of code continues with the else case, if no '!','!!', or '!!!' was found. It first looks for italicized, bolded, or underlined, and will make necessary changes to cellValue based on these decision statements. After this, it will split apart the text from any embedded hyperlink, if applicable, so that the text will show, but the hyperlink will be included in the .txt file for export into a Markdown format. After all of the columns loop through, the rowString will be printed onto the .txt file, and a new rowString will begin to be created. After all of the rows have been looped through, the program closes the .txt file and the program ends. There is also a small segment of code similar to the code near the start of the program; this code checks if there is only one row in the user's selection. If so, it tacks on the Markdown formatting necessary, which wouldn't be triggered by the code elsewhere.
 
 ![Code6](Code6.JPG)
 
