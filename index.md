@@ -21,3 +21,5 @@ https://swampysquid.github.io/ExcelToMarkdown/
 | 2/22/2021| 11| [<u>Doing Better Data Visualization (R and ggplots tutorisl)</u>](https://github.com/arielcwebster/DataScience/blob/main/Doing Better Data Visualization _ Enhanced Reader.pdf)| [<u>Why Data is good for governments to provide</u>](https://www.theguardian.com/local-government-network/2013/oct/21/open-data-us-san-francisco)| 
 | 2/24/2021| 12| Work Day| [<u>HW 4 - ggplots</u>](https://docs.google.com/document/u/0/d/1TXkdIoYaQrT3uLCqSY_RbHr2jYbZPsTP4KwXppt2sN0/edit)| 
 | 3/1/2021| 13| Sentiment Analysis - History and Types| Data Annonymity| 
+
+## FIN
