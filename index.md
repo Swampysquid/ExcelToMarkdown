@@ -2,19 +2,19 @@
 [<u>To Webpage</u>](https://swampysquid.github.io/ExcelToMarkdown/)
 
 **By: Eythan Jenkins**
-## <u>**Summary**</u>
+## <u>Summary</u>
 
-This Macro will take in a cell selection made by the user in Excel, and convert it into a .txt file for the user to then copy into a Markdown-formatted webpage to generate a Markdown table. The .txt file will be titled 'copyFile', and will be written on the user's computer. The user will also have three auxilliary options when it comes to generating the .txt file. Any Excel cells marked with a '!' will be blanked out in the .txt file. Any Excel cells marked with a '!!' will be blanked out in the .txt file, in addition to any cells in the same column which follow that cell. Finally, any Excel cells marked with '!!!' will have their hyperlink disabled, so that only text is converted from the Excel cell into the Markdown table. A sample Excel Sheet to Markdown Table is below, and will be referred to later on to help convey the ideas of this VBA program.  
+This Macro will take in a cell selection made by the user in Excel, and convert it into a .txt file for the user to then copy into a Markdown-formatted webpage to generate a Markdown table. The .txt file will be titled 'copyFile', and will be written on the user's computer. The user will also have three auxilliary options when it comes to generating the .txt file. Any Excel cells marked with an '!' will be blanked out in the .txt file. Any Excel cells marked with an '!!' will be blanked out in the .txt file, in addition to any cells in the same column which follow that cell. Finally, any Excel cells marked with '!!!' will have their hyperlink disabled, so that only text is converted from the Excel cell into the Markdown table. A sample Excel Sheet to Markdown Table is below, and will be referred to later on to help convey the ideas of this VBA program.  
 
-## <u>**Excel Sheet**</u>
+## <u>Excel Sheet</u>
 
 ![BaseTable](BaseTable.JPG)
 
-## <u>**Excel to .txt File**</u>
+## <u>Excel to .txt File</u>
 
 ![Produced](Produced.JPG)
 
-## <u>**Resulting Table from Copying the .txt**</u>
+## <u>Resulting Table from Copying the .txt</u>
 
 | | **Day**| **Topic**| **Due**| 
 | ---| ---| ---| ---| 
@@ -33,7 +33,7 @@ This Macro will take in a cell selection made by the user in Excel, and convert 
 | 2/24/2021|  | Work Day|  | 
 | 3/1/2021|  | Sentiment Analysis - History and Types|  | 
 
-## <u>**Macro Usage**</u>
+## <u>Macro Usage</u>
 
 There are up to 4 operations involved in using this Macro:
 
@@ -53,7 +53,7 @@ The second auxilliary option is to place an '!!' in front of a cell. Placing '!!
 
 The final auxilliary option is to place '!!!' in front of a cell. This option will disable the hyperlink associated with that cell, making only the text in that cell convert to the Markdown Table. This is demonstrated in cell D6. D6 has an active hyperlink in the Excel sheet, but in the Markdown Table, the hyperlink has been disabled and only the text appears. 
 
-## <u>**How the Code Works**</u>
+## <u>How the Code Works</u>
 
 
-## <u>**References**</u>
+## <u>References</u>
