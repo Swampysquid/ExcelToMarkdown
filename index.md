@@ -75,7 +75,7 @@ The next segment looks closer at the data within a selected cell. It generates b
 
 __________________________________
 
-This segment of the code is in control of the auxiliary options. It uses a decision structure to see how many '!' exist behind a cell, if any. At the innermost is the decision if there is '!!!', in which case a loop is entered which looks for the hyperlink in that specific cell. It will check if the hyperlink is equal to the text (i.e. https://...). If equal, then the hyperlink will be disabled. Else, the text is already different than the hyperlink, so separating the two values from each other will be sufficient. This section also adds any bold, italicized, or underline notation as needed to variable cellValue, and finally adds the produced cellValue to rowString with a '|' for syntax. \[Reference 2]
+This segment of the code is in control of the auxiliary options. It uses a decision structure to see how many '!' exist behind a cell, if any. At the innermost is the decision if there is '!!!', in which case a loop is entered which looks for the hyperlink in that specific cell. It will check if the hyperlink is equal to the text (i.e. https://...). If equal, then the hyperlink will be disabled. Else, the text is already different than the hyperlink, so separating the two values from each other will be sufficient. This section also adds any bold, italicized, or underline notation as needed to variable cellValue, and finally adds the produced cellValue to rowString with a '\|' for syntax. \[Reference 2]
 
 ![Code4](Code4.JPG)
 
