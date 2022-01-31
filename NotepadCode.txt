@@ -1,0 +1,152 @@
+' Eythan Jenkins
+' VBA Homework 2
+' This VBA Macro will be able to:
+'   - Read a downloaded Excel file
+'   - Transform as closely as possibly into a Markdown Table
+'   - Allow columns to be deselected for the Markdown Table
+'   - Allow Cells to be deselected for the Markdown Table
+'   - Allow Links to be disabled within specific cells
+Sub Excel_To_Markdown()
+'______________________________________________________________________
+' Creates a word file for the user using the 2-D array
+    copyFile = Application.DefaultFilePath & "\copyFile.txt"
+    Open copyFile For Output As #1
+
+    Dim Range As Range
+    Set Range = Selection
+' Finds the height and length of the selected table using the range
+    tableHeight = Range.Rows.Count
+    tableLength = Range.Columns.Count
+' Prepares an array for columns which are 'blacklisted'
+' https://excelmacromastery.com/excel-vba-array/
+    Dim blackListedArray() As Long
+    ReDim blackListedArray(0 To 0) As Long
+'_________________________________________________________________________
+' Reads row-by-row, then column-by-column
+    For Row = 1 To tableHeight
+        Dim rowString As String
+        rowString = "| "
+' Adds in values specifically for markdown conversion
+        If Row = 2 Then
+            For dashes = 1 To tableLength
+                rowString = rowString & "---" & "| "
+                Next dashes
+            Print #1, (rowString)
+            rowString = "| "
+        End If
+' Gathers data by row in each column
+        For Column = 1 To tableLength
+' Checks if the current column is blacklisted from a '!!' operation
+            Dim blackListedInt As Variant
+            Dim badColumn As Boolean
+            badColumn = False
+' Looks through the list
+            For Each blackListedInt In blackListedArray()
+                If blackListedInt = Column Then
+                    badColumn = True
+                End If
+            Next blackListedInt
+' If found, sets cellValue to be an exclamation point so that nothing will be saved
+            If badColumn Then
+                cellValue = "!"
+            Else
+' Get cell information within the range
+                cellValue = Range.Cells(Row, Column)
+            End If
+' Makes booleans for underlined, italicized, and bolded cell content
+            Dim underlineTrue As Boolean
+            underlineTrue = False
+            Dim boldTrue As Boolean
+            boldTrue = False
+            Dim italicTrue As Boolean
+            italicTrue = False
+' Checks if the data is underlined, bolded, or italicized
+            If Range.Cells(Row, Column).Font.Bold Then
+                boldTrue = True
+            End If
+            If Range.Cells(Row, Column).Font.Italic Then
+                italicTrue = True
+            End If
+            If Range.Cells(Row, Column).Font.Underline = xlUnderlineStyleSingle Then
+                underlineTrue = True
+            End If
+    ' Checks for "!", "!" dictates to remove the cell
+            If Left(cellValue, 1) = "!" Then
+    ' Checks for "!!", dictates to remove the column/ remaining column
+                If Left(cellValue, 2) = "!!" Then
+    ' Checks for "!!!", dictates to keep cell but not the hyperlink
+                    If Left(cellValue, 3) = "!!!" Then
+    ' Adds any italics, bold, underline. Eliminates the '!!!'
+                        cellValue = Right(cellValue, Len(cellValue) - 3)
+    ' This is used to get the hyperlink address to see if the address matches the cell text
+    ' https://techcommunity.microsoft.com/t5/excel/how-can-i-extract-url-from-hyperlinks/m-p/1286119
+    ' datta9381
+                        Dim hyper As Hyperlink
+                        For Each hyper In Range.Cells(Row, Column).Hyperlinks
+                            hyperValue = hyper.Address
+                        Next hyper
+    ' Adds backticks to turn off links in markdown format only if the cell string is a hyperlink itself
+                        If cellValue = hyperAddress Then
+                            cellValue = "`" & cellValue & "`"
+                        End If
+                        If italicTrue And boldTrue Then
+                            cellValue = "***" & cellValue & "***"
+                        ElseIf italicTrue Then
+                            cellValue = "*" & cellValue & "*"
+                        ElseIf boldTrue Then
+                            cellValue = "**" & cellValue & "**"
+                        End If
+                        If underlineTrue Then
+                            cellValue = "<u>" & cellValue & "</u>"
+                        End If
+    ' Saves data
+                        rowString = rowString & cellValue & "| "
+    ' Doesn't save this cell nor read rest of rows in that column in the future by blacklisting it
+                    Else
+                        rowString = rowString & " " & "| "
+                        Dim arrLength As Integer
+                        arrLength = UBound(blackListedArray) + 1
+                        ReDim Preserve blackListedArray(0 To arrLength) As Long
+                        blackListedArray(arrLength) = Column
+                    End If
+    ' Doesn't save the cell
+                Else
+                    rowString = rowString & " " & "| "
+                End If
+    ' Saves all data, adds a '|', increments the loop
+            Else
+    ' Adds any italics, bold, underline.
+                If italicTrue And boldTrue Then
+                    cellValue = "***" & cellValue & "***"
+                ElseIf italicTrue Then
+                    cellValue = "*" & cellValue & "*"
+                ElseIf boldTrue Then
+                    cellValue = "**" & cellValue & "**"
+                End If
+                If underlineTrue Then
+                    cellValue = "<u>" & cellValue & "</u>"
+                End If
+    ' Splits into text and address if applicable
+    ' https://techcommunity.microsoft.com/t5/excel/how-can-i-extract-url-from-hyperlinks/m-p/1286119
+    ' datta9381
+                Dim hyper2 As Hyperlink
+                For Each hyper2 In Range.Cells(Row, Column).Hyperlinks
+                    cellValue = "[" & cellValue & "]" & "(" & hyper2.Address & ")"
+                Next hyper2
+                rowString = rowString & cellValue & "| "
+            End If
+ '           End If
+            Next Column
+' Writes each row to the document
+        Print #1, (rowString)
+        Next Row
+' Adds in values specifically for markdown conversion
+        If tableHeight = 1 Then
+            rowString = "| "
+            For dashes = 1 To tableLength
+                rowString = rowString & "---" & "| "
+                Next dashes
+            Print #1, (rowString)
+        End If
+    Close #1
+End Sub
