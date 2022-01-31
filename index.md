@@ -3,6 +3,7 @@ https://swampysquid.github.io/ExcelToMarkdown/
 **By: Eythan Jenkins**
 
 ## Resulting Table
+
 ||**Day**|**Topic**|**Due**|
 |---|---|---|---|
 |||||
