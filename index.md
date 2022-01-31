@@ -55,5 +55,42 @@ The final auxilliary option is to place '!!!' in front of a cell. This option wi
 
 ## <u>How the Code Works</u>
 
+The first bit of code establishes a text file which will be written into by the Macro. Additionally, it declares range as the selection the user has made in the Excel sheet. It uses this selection to create two dimensions: tableHeight and tableLength. FInally, a dynamically sized array is established, which will hold the number of a column which is 'blacklisted,' indicated by '!!' in the excel cells. \[Reference 1]
+
+![Code1](Code1.JPG)
+
+__________________________________
+
+The second piece of my code begins the reading operation: it will go row-by-row, then column-by-column to read the information of the Excel cells. The .txt file will be written into row-by-row by using a String named rowString. This will contain the contents each row of the Markdown Table will consist of. An additional part of this code is an If statement which flags when Row = 2. When Row = 2, I must add syntax for the .txt file to be Markdown congruent. 
+
+This code will then enter a nested loop, where I enter the column-by-column counter. FOr each column, I look through my dynamic array to make sure that the column doesn't match a blacklisted one. If it matches a blacklisted column, the cellValue variable will = '!'. If the column is a good column, I will save the data in the corresponding Excel cell into the cellValue variable. \[Reference 2]
+
+![Code2](Code2.JPG)
+
+__________________________________
+
+The next segment looks closer at the data within a selected cell. It generates boolean values for whether the cell is underlined, bold, or italicized, and will turn these values true if the Font of the cell fulfills these requirements.
+
+![Code3](Code3.JPG)
+
+__________________________________
+
+
+
+![Code4](Code4.JPG)
+
+__________________________________
+
+
+![Code5](Code5.JPG)
+
+__________________________________
+
+
+![Code6](Code6.JPG)
+
+__________________________________
+
+
 
 ## <u>References</u>
