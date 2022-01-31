@@ -2,9 +2,17 @@
 [<u>To Webpage</u>](https://swampysquid.github.io/ExcelToMarkdown/)
 
 **By: Eythan Jenkins**
-## Summary
+## <u>**Summary**</u>
 
-## Resulting Table
+## <u>**Excel Sheet**</u>
+
+![BaseTable](BaseTable.JPG)
+
+## <u>**Excel to .txt File**</u>
+
+![Produced](Produced.JPG)
+
+## <u>**Resulting Table from Copying the .txt**</u>
 
 | | **Day**| **Topic**| **Due**| 
 | ---| ---| ---| ---| 
@@ -23,7 +31,13 @@
 | 2/24/2021|  | Work Day|  | 
 | 3/1/2021|  | Sentiment Analysis - History and Types|  | 
 
+## <u>**Macro Usage**</u>
 
-![BaseTable](BaseTable.JPG)
-![Produced](Produced.JPG)
-## FIN
+There are up to 4 operations involved in using this Macro:
+
+# <u>Initial Selection</u>
+
+## <u>**How the Code Works**</u>
+
+
+## <u>**References**</u>
