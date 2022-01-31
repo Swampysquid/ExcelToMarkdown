@@ -14,21 +14,13 @@ https://swampysquid.github.io/ExcelToMarkdown/
 | 1/27/2021| 4| Work Day| <u>HW2 - VBA</u>| 
 | 2/1/2021| 5| Why are data visualizations important ?| [<u>Reading Due - Florence Nightengale</u>](https://docs.google.com/forms/d/1FBgScIpV9Vpa-jb1nlWuoCqOxFE7v5SmQtacpFHpIq8/edit)| 
 | 2/3/2021| 6| Tableau| [<u>COVID Risk Calculator</u>](https://www.nytimes.com/2021/12/30/style/covid-risk-calculator.html)| 
-|  | 7| How visualizations lie| [<u>Reading Due - Differnet Kinds of Data Visualization</u>](https://github.com/arielcwebster/DataScience/blob/main/visualdatacommunication.pdf)| 
-| 2/10/2021| 8| Work Day| [<u>HW 3 - Tableau</u>](https://docs.google.com/document/d/1bta4t39rpvl-kXgO2pmZPGypWnYyBbiyzCPek9kxv9E/edit)| 
+| 2/8/2021| 7| How visualizations lie| [<u>Reading Due - Differnet Kinds of Data Visualization</u>](https://github.com/arielcwebster/DataScience/blob/main/visualdatacommunication.pdf)| 
+|  | 8| Work Day| [<u>HW 3 - Tableau</u>](https://docs.google.com/document/d/1bta4t39rpvl-kXgO2pmZPGypWnYyBbiyzCPek9kxv9E/edit)| 
 | 2/15/2021| 9| Danielle| Reading Due - How Charts Lie| 
-| 2/17/2021| 10|  | | 
-| 2/22/2021| 11|  | [<u>Why Data is good for governments to provide</u>](https://www.theguardian.com/local-government-network/2013/oct/21/open-data-us-san-francisco)| 
-| 2/24/2021| 12|  | <u>HW 4 - ggplots</u>| 
-| 3/1/2021| 13|  |  | 
-| 3/3/2021| 14| TextBlob|  | 
-| 3/8/2021| 15| VADER|  | 
-| 3/10/2021| 16| [<u>P-Hacking Reflection</u>](https://rss.onlinelibrary.wiley.com/doi/epdf/10.1111/1740-9713.01505)|  | 
-| 3/15/2021| Spring Break| |  | 
-| 3/17/2021| | |  | 
-| 3/22/2021| 17| Random Forest|  | 
-| 3/24/2021| 18| |  | 
-
+| 2/17/2021|  |  |  | 
+| 2/22/2021|  | [<u>Doing Better Data Visualization (R and ggplots tutorisl)</u>](https://github.com/arielcwebster/DataScience/blob/main/Doing Better Data Visualization _ Enhanced Reader.pdf)|  | 
+| 2/24/2021|  | Work Day|  | 
+| 3/1/2021|  | Sentiment Analysis - History and Types|  | 
 
 
 ## FIN
