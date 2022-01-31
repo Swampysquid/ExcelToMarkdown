@@ -4,6 +4,8 @@
 **By: Eythan Jenkins**
 ## <u>**Summary**</u>
 
+This Macro will take in a cell selection made by the user in Excel, and convert it into a .txt file for the user to then copy into a Markdown-formatted webpage to generate a Markdown table. The .txt file will be titled 'copyFile', and will be written on the user's computer. The user will also have three auxilliary options when it comes to generating the .txt file. Any Excel cells marked with a '!' will be blanked out in the .txt file. Any Excel cells marked with a '!!' will be blanked out in the .txt file, in addition to any cells in the same column which follow that cell. Finally, any Excel cells marked with '!!!' will have their hyperlink disabled, so that only text is converted from the Excel cell into the Markdown table. A sample Excel Sheet to Markdown Table is below, and will be referred to later on to help convey the ideas of this VBA program.  
+
 ## <u>**Excel Sheet**</u>
 
 ![BaseTable](BaseTable.JPG)
@@ -35,7 +37,21 @@
 
 There are up to 4 operations involved in using this Macro:
 
-# <u>Initial Selection</u>
+### <u>Initial Selection</u>
+
+The initial selection dictates the range that this Macro has. By selecting a box on Excel, then activating the Macro, the Macro will produce the .txt file whose scope is that of your selection.
+
+### <u>Single Cell Blanking</u>
+
+
+
+### <u>Column Blanking</u>
+
+
+
+### <u>Disable Hyperlinks</u>
+
+
 
 ## <u>**How the Code Works**</u>
 
