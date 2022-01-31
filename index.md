@@ -95,7 +95,7 @@ __________________________________
 
 ## <u>References</u>
 
-\[[My Code(Excel with Macro)](Spring 2022 - Data Science Schedule WIth MAcro.xlsm)]
+\[[My Code(Excel with Macro)](Spring 2022 - Data Science Schedule WIth MAcro)]
 
 This is my code, as a Macro in the attached Excel File
 
