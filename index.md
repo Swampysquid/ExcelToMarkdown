@@ -95,18 +95,18 @@ __________________________________
 
 ## <u>References</u>
 
-[\[My Code(Excel with Macro)](Spring 2022 - Data Science Schedule WIth MAcro.xlsm)]
+\[[My Code(Excel with Macro)](Spring 2022 - Data Science Schedule WIth MAcro.xlsm)]
 
 This is my code, as a Macro in the attached Excel File
 
-[\[My Code(Text File)](NotePadCode)]
+\[[My Code(Text File)](NotePadCode)]
 
 This is my code, copied into a .txt file.
 
 \[[Reference 1](https://excelmacromastery.com/excel-vba-array/)]
 Anything marked with \[Reference 1] in my code, I used to help me understand arrays, dynamic v. static, and how to redimension arrays.
 
-[\[Reference 2](https://techcommunity.microsoft.com/t5/excel/how-can-i-extract-url-from-hyperlinks/m-p/1286119)]
+\[[Reference 2](https://techcommunity.microsoft.com/t5/excel/how-can-i-extract-url-from-hyperlinks/m-p/1286119)]
 Anything marked with \[Reference 2] in my code: I derived the for-loop structure for finding hyperlinks from this link. I modified it to check either the blacklisted array, or to extract the hyperlink in a given cell. The original code was from user 'datta9381,' whose code was this:
 
-[DattaCode](DattaCode.JPG)
+![DattaCode](DattaCode.JPG)
