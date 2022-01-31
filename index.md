@@ -39,19 +39,19 @@ There are up to 4 operations involved in using this Macro:
 
 ### <u>Initial Selection</u>
 
-The initial selection dictates the range that this Macro has. By selecting a box on Excel, then activating the Macro, the Macro will produce the .txt file whose scope is that of your selection.
+The initial selection dictates the range that this Macro has. By selecting a box on Excel, then activating the Macro, the Macro will produce the .txt file whose scope is that of your selection. This is demonstrated in the sample code: the user has selected cells A1:D15, therefore the Macro will only obtain values from A1:D15.
 
 ### <u>Single Cell Blanking</u>
 
-
+The first auxilliary user option is to place an '!' in front of a cell. This will omit that cell's text from entering the .txt file, therefore preventing that cell from appearing on the Markdown Table. This is demonstrated in cells A10 and C12. Both of these cells do not appear on the resulting Markdown Table.
 
 ### <u>Column Blanking</u>
 
-
+The second auxilliary option is to place an '!!' in front of a cell. Placing '!!' will not only perform the same function as '!', but will also perform the '!' function to all cells in the same column which come after the '!!' cell. This is demonstrated in cells B12 and D12. Both of these cells, as well as the future cells in columns B and D, do not appear on the Markdown Table due to the '!!' option.
 
 ### <u>Disable Hyperlinks</u>
 
-
+The final auxilliary option is to place '!!!' in front of a cell. This option will disable the hyperlink associated with that cell, making only the text in that cell convert to the Markdown Table. This is demonstrated in cell D6. D6 has an active hyperlink in the Excel sheet, but in the Markdown Table, the hyperlink has been disabled and only the text appears. 
 
 ## <u>**How the Code Works**</u>
 
