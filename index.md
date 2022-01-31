@@ -87,12 +87,26 @@ This segment of code corresponds to the '!!' and '!' functions. '!!' will blackl
 
 __________________________________
 
-This segment of code continues with the else case, if no '!','!!', or '!!!' was found. It first looks for italicized, bolded, or underlined, and will make necessary changes to cellValue based on these decision statements. After this, it will split apart the text from any embedded hyperlink, if applicable, so that the text will show, but the hyperlink will be included in the .txt file for export into a Markdown format. After all of the columns loop through, the rowString will be printed onto the .txt file, and a new rowString will begin to be created. After all of the rows have been looped through, the program closes the .txt file and the program ends. There is also a small segment of code similar to the code near the start of the program; this code checks if there is only one row in the user's selection. If so, it tacks on the Markdown formatting necessary, which wouldn't be triggered by the code elsewhere.
+This segment of code continues with the else case, if no '!','!!', or '!!!' was found. It first looks for italicized, bolded, or underlined, and will make necessary changes to cellValue based on these decision statements. After this, it will split apart the text from any embedded hyperlink, if applicable, so that the text will show, but the hyperlink will be included in the .txt file for export into a Markdown format. After all of the columns loop through, the rowString will be printed onto the .txt file, and a new rowString will begin to be created. After all of the rows have been looped through, the program closes the .txt file and the program ends. There is also a small segment of code similar to the code near the start of the program; this code checks if there is only one row in the user's selection. If so, it tacks on the Markdown formatting necessary, which wouldn't be triggered by the code elsewhere. \[Reference 2]
 
 ![Code6](Code6.JPG)
 
 __________________________________
 
-
-
 ## <u>References</u>
+
+[\[My Code(Excel with Macro)](Spring 2022 - Data Science Schedule WIth MAcro.xlsm)]
+
+This is my code, as a Macro in the attached Excel File
+
+[\[My Code(Text File)](NotePadCode)]
+
+This is my code, copied into a .txt file.
+
+\[[Reference 1](https://excelmacromastery.com/excel-vba-array/)]
+Anything marked with \[Reference 1] in my code, I used to help me understand arrays, dynamic v. static, and how to redimension arrays.
+
+[\[Reference 2](https://techcommunity.microsoft.com/t5/excel/how-can-i-extract-url-from-hyperlinks/m-p/1286119)]
+Anything marked with \[Reference 2] in my code: I derived the for-loop structure for finding hyperlinks from this link. I modified it to check either the blacklisted array, or to extract the hyperlink in a given cell. The original code was from user 'datta9381,' whose code was this:
+
+[DattaCode](DattaCode.JPG)
