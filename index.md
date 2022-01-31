@@ -95,11 +95,11 @@ __________________________________
 
 ## <u>References</u>
 
-\[[My Code(Excel with Macro)](Spring 2022 - Data Science Schedule WIth MAcro)]
+\[[My Code(Excel with Macro)](https://github.com/Swampysquid/ExcelToMarkdown/blob/gh-pages/Spring%202022%20-%20Data%20Science%20Schedule%20WIth%20MAcro.xlsm)]
 
 This is my code, as a Macro in the attached Excel File
 
-\[[My Code(Text File)](NotePadCode)]
+\[[My Code(Text File)](https://github.com/Swampysquid/ExcelToMarkdown/blob/gh-pages/NotepadCode.txt)]
 
 This is my code, copied into a .txt file.
 
